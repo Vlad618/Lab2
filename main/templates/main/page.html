@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <p>{{ content }}</p>
+
+    <hr>
+
+    {% if is_home %}
+        <h2>Посилання на інші сторінки:</h2>
+        <ul>
+            {% for page in pages %}
+                <li>
+                    <a href="{{ page.url }}">{{ page.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <a href="/">На головну</a>
+    {% endif %}
+</body>
+</html>
